@@ -5,13 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx only-allow pnpm",
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["tanstack", "tanstack start", "shadcn/ui", "tanstack shadcn demo"],
+  "author": "Aryan Chaurasia",
   "license": "ISC",
   "packageManager": "pnpm@10.9.0",
   "dependencies": {
