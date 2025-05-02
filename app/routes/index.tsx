@@ -31,24 +31,38 @@ function Home() {
     <>
       <div className="container max-w-lg mx-auto flex flex-col items-center justify-center h-screen gap-4">
         <h1 className="text-2xl font-bold text-center">Tanstack Start + ShadCN/ui</h1>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="gap-4">
           <div>
             <h2 className="text-lg text-center font-mono">How to Start?</h2>
-            <ol>
-              <li>Step 1: Set up your environment.</li>
-              <li>Step 2: Clone the GitHub repository.</li>
-              <li>Step 3: Install the dependencies.</li>
-              <li>Step 4: Run the development server.</li>
-              <li>Step 5: Open your browser and navigate to the app.</li>
-              <li>Step 6: Click the button to see the counter in action.</li>
-              <li>Step 7: Check the console for server action logs.</li>
-              <li>Step 8: Modify the code to suit your needs.</li>
-              <li>Step 9: Enjoy building your application!</li>
-              <li>Step 10: Share your feedback and contributions.</li>
-              <li>Step 11: Explore the documentation for more features.</li>
-            </ol>
+            <div className="bg-muted p-4 rounded-lg border shadow-sm">
+              <ol className="space-y-2 list-decimal list-inside">
+                {/* <li className="text-sm">Set up your environment
+                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded">nvm use</code>
+                </li> */}
+                <li className="text-sm">Clone the repository
+                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded">git clone https://github.com/your-repo/tanstack-start-demo.git</code>
+                </li>
+                <li className="text-sm">Install dependencies
+                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded">npm install</code>
+                </li>
+                <li className="text-sm">Run development server
+                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded">npm run dev</code>
+                </li>
+                <li className="text-sm">Open in browser
+                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded">http://localhost:3000</code>
+                </li>
+                <li className="text-sm">Test the counter feature</li>
+                <li className="text-sm">Check server logs
+                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded">npm run logs</code>
+                </li>
+                <li className="text-sm">Customize for your needs</li>
+                <li className="text-sm">Read documentation
+                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded">https://tanstack.com/start/latest</code>
+                </li>
+              </ol>
+            </div>
           </div>
-          <div className="text-center flex flex-col gap-2">
+          <div className="text-center flex flex-col gap-2 my-5">
             <h3>Server Action Example</h3>
             <p>Count: {counter}</p>
             <Button
