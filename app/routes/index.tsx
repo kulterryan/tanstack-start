@@ -3,6 +3,7 @@ import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { createServerFn } from '@tanstack/react-start';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { ModeToggle } from '@/components/theme-toggle';
 
 let count = 0;
 
@@ -74,6 +75,10 @@ function Home() {
             >
               Click me to +1?
             </Button>
+          </div>
+          <div className='flex flex-col items-center gap-2'>
+            <h3>Theme Toggle</h3>
+            <ModeToggle />
           </div>
         </div>
       </div>

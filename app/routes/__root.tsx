@@ -1,8 +1,11 @@
 // app/routes/__root.tsx
 import type { ReactNode } from 'react';
 import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router';
+import { useEffect } from 'react';
 
-import appCss from "@/styles/app.css?url"
+import appCss from '@/styles/app.css?url';
+import { getThemeServerFn } from '@/lib/theme';
+import { ThemeProvider, useTheme } from '@/components/theme-provider';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -22,23 +25,34 @@ export const Route = createRootRoute({
       {
         rel: 'stylesheet',
         href: appCss,
-      }
-    ]
+      },
+    ],
   }),
+  loader: () => getThemeServerFn(),
   component: RootComponent,
 });
 
 function RootComponent() {
+  const theme = Route.useLoaderData() as 'light' | 'dark';
   return (
-    <RootDocument>
-      <Outlet />
-    </RootDocument>
+    <ThemeProvider theme={theme}>
+      <RootDocument>
+        <Outlet />
+      </RootDocument>
+    </ThemeProvider>
   );
 }
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
+  const { theme } = useTheme();
+  
+  useEffect(() => {
+    const root = document.documentElement;
+    root.className = theme;
+  }, [theme]);
+  
   return (
-    <html>
+    <html className={theme} lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
