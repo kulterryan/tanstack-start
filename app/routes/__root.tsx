@@ -4,7 +4,6 @@ import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-r
 import { useEffect } from 'react';
 
 import appCss from '@/styles/app.css?url';
-import { getThemeServerFn } from '@/lib/theme';
 import { ThemeProvider, useTheme } from '@/components/theme-provider';
 
 export const Route = createRootRoute({
@@ -28,14 +27,12 @@ export const Route = createRootRoute({
       },
     ],
   }),
-  loader: () => getThemeServerFn(),
   component: RootComponent,
 });
 
 function RootComponent() {
-  const theme = Route.useLoaderData() as 'light' | 'dark';
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <RootDocument>
         <Outlet />
       </RootDocument>
@@ -55,6 +52,21 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
     <html className={theme} lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const stored = localStorage.getItem('ui-theme');
+                  const theme = stored || 'dark';
+                  document.documentElement.className = theme;
+                } catch (e) {
+                  document.documentElement.className = 'dark';
+                }
+              })();
+            `,
+          }}
+        />
       </head>
       <body>
         {children}

@@ -1,24 +1,31 @@
-import { setThemeServerFn } from "@/lib/theme";
-import { useRouter } from "@tanstack/react-router";
-import { createContext, PropsWithChildren, useContext } from "react";
+import { getThemeFromStorage, setThemeToStorage } from "@/lib/theme";
+import { createContext, PropsWithChildren, useContext, useEffect, useState } from "react";
 
 export type Theme = "light" | "dark";
 
 type ThemeContextVal = { theme: Theme; setTheme: (val: Theme) => void };
-type Props = PropsWithChildren<{ theme: Theme }>;
+type Props = PropsWithChildren<{ theme?: Theme }>;
 
 const ThemeContext = createContext<ThemeContextVal | null>(null);
 
-export function ThemeProvider({ children, theme }: Props) {
-  const router = useRouter();
-
-  async function setTheme(val: Theme) {
-    try {
-      await setThemeServerFn({ data: val });
-      router.invalidate();
-    } catch (error) {
-      console.error('Failed to set theme:', error);
+export function ThemeProvider({ children, theme: initialTheme }: Props) {
+  // Initialize with localStorage value or default to dark
+  const [theme, setThemeState] = useState<Theme>(() => {
+    if (typeof window !== "undefined") {
+      return getThemeFromStorage();
     }
+    return initialTheme || "dark";
+  });
+
+  // Apply theme class immediately on client-side
+  useEffect(() => {
+    document.documentElement.className = theme;
+  }, [theme]);
+
+  function setTheme(val: Theme) {
+    setThemeState(val);
+    setThemeToStorage(val);
+    document.documentElement.className = val;
   }
 
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
