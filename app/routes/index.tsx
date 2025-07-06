@@ -4,6 +4,7 @@ import { createServerFn } from '@tanstack/react-start';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { ModeToggle } from '@/components/theme-toggle';
+import { GithubIcon } from 'lucide-react';
 
 let count = 0;
 
@@ -79,6 +80,10 @@ function Home() {
           <div className='flex flex-col items-center gap-2'>
             <h3>Theme Toggle</h3>
             <ModeToggle />
+          </div>
+          <div className='flex flex-col items-center gap-2'>
+            <h3>Contribute on Github</h3>
+            <a className='flex gap-2' href="https://github.com/kulterryan/tanstack-start-demo" target='_blank'><GithubIcon/></a>
           </div>
         </div>
       </div>
