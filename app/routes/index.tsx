@@ -83,7 +83,7 @@ function Home() {
           </div>
           <div className='flex flex-col items-center gap-2'>
             <h3>Contribute on Github</h3>
-            <a className='flex gap-2' href="https://github.com/kulterryan/tanstack-start-demo" target='_blank'><GithubIcon/></a>
+            <a className='flex gap-2' href="https://github.com/kulterryan/tanstack-start-demo" target='_blank'><GithubIcon/> Created by @kulterryan</a>
           </div>
         </div>
       </div>
