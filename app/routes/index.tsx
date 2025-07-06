@@ -42,24 +42,24 @@ function Home() {
                   <code className="ml-2 text-xs bg-gray-100 p-1 rounded">nvm use</code>
                 </li> */}
                 <li className="text-sm">Clone the repository
-                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded dark:text-black">git clone https://github.com/your-repo/tanstack-start-demo.git</code>
+                  <code className="ml-2 text-xs bg-gray-200 p-1 rounded dark:text-black">git clone https://github.com/your-repo/tanstack-start-demo.git</code>
                 </li>
                 <li className="text-sm">Install dependencies
-                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded dark:text-black">npm install</code>
+                  <code className="ml-2 text-xs bg-gray-200 p-1 rounded dark:text-black">npm install</code>
                 </li>
                 <li className="text-sm">Run development server
-                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded dark:text-black">npm run dev</code>
+                  <code className="ml-2 text-xs bg-gray-200 p-1 rounded dark:text-black">npm run dev</code>
                 </li>
                 <li className="text-sm">Open in browser
-                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded dark:text-black">http://localhost:3000</code>
+                  <code className="ml-2 text-xs bg-gray-200 p-1 rounded dark:text-black">http://localhost:3000</code>
                 </li>
                 <li className="text-sm">Test the counter feature</li>
                 <li className="text-sm">Check server logs
-                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded dark:text-black">npm run logs</code>
+                  <code className="ml-2 text-xs bg-gray-200 p-1 rounded dark:text-black">npm run logs</code>
                 </li>
                 <li className="text-sm">Customize for your needs</li>
                 <li className="text-sm">Read documentation
-                  <code className="ml-2 text-xs bg-gray-100 p-1 rounded dark:text-black">https://tanstack.com/start/latest</code>
+                  <code className="ml-2 text-xs bg-gray-200 p-1 rounded dark:text-black">https://tanstack.com/start/latest</code>
                 </li>
               </ol>
             </div>
