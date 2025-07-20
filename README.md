@@ -4,7 +4,7 @@ This is a demo project showcasing the use of [TanStack Start](https://tanstack.c
 
 ## Deployment
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/eKZ46C?referralCode=Y4mYdQ)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/eKZ46C?referralCode=Y4mYdQ) [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkulterryan%2Ftanstack-start%2Ftree%2Fmaster&project-name=tanstack-start-starter&repository-name=tanstack-start)
 
 ## Features
 
