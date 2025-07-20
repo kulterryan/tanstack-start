@@ -2,6 +2,10 @@
 
 This is a demo project showcasing the use of [TanStack Start](https://tanstack.com/start) with [shadcn/ui](https://ui.shadcn.com/) components. It demonstrates a modern React application structure, routing, and a rich set of accessible UI primitives.
 
+## Deployment
+
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/eKZ46C?referralCode=Y4mYdQ)
+
 ## Features
 
 - ⚡️ Built with [TanStack Start](https://tanstack.com/start) for file-based routing and SSR.
